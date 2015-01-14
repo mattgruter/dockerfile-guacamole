@@ -1,0 +1,17 @@
+<user-mapping>
+    <authorize username="oper" password="oper">
+        <connection name="gentoo-magr">
+            <protocol>vnc</protocol>
+            <param name="hostname">gentoo-magr</param>
+            <param name="port">5900</param>
+            <param name="password">transmode</param>
+        </connection>
+
+        <connection name="centos-magr">
+            <protocol>vnc</protocol>
+            <param name="hostname">centos-magr</param>
+            <param name="port">5901</param>
+            <param name="password">transmode</param>
+        </connection>
+    </authorize>
+</user-mapping>
