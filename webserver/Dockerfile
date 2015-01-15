@@ -11,9 +11,9 @@ ENV GUACAMOLE_WAR_SHA1 07d194593db296d20d87b858b02e7816fb4a9315
 RUN rm -rf webapps/*
 
 # Fetch and install Guacamole war archive.
-RUN echo $GUACAMOLE_WAR_SHA1  ROOT.war > webapps/ROOT.war.sha1
-RUN curl -L -o webapps/ROOT.war http://sourceforge.net/projects/guacamole/files/current/binary/guacamole-${GUACAMOLE_VERSION}.war/download 
-RUN cd webapps && sha1sum --quiet -c ROOT.war.sha1
+RUN echo $GUACAMOLE_WAR_SHA1  ROOT.war > webapps/ROOT.war.sha1 && \
+    curl -L -o webapps/ROOT.war http://sourceforge.net/projects/guacamole/files/current/binary/guacamole-${GUACAMOLE_VERSION}.war/download && \
+    cd webapps && sha1sum -c --quiet ROOT.war.sha1
 
 # Expose tomcat runtime options through the RUNTIME_OPTS environment variable.
 #   Example to set the JVM's max heap size to 256MB use the flag
