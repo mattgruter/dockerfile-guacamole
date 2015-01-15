@@ -1,0 +1,11 @@
+guacd:
+  build: guacd
+db:
+  build: db
+webserver:
+  build: webserver
+  links:
+    - guacd
+    - db
+  ports:
+    - "8080"
