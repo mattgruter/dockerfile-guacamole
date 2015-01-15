@@ -12,8 +12,8 @@ RUN echo $GUACAMOLE_AUTH_MYSQL_SHA1  guacamole-auth-mysql.tar.gz > guacamole-aut
     curl -L -o guacamole-auth-mysql.tar.gz http://sourceforge.net/projects/guacamole/files/current/extensions/guacamole-auth-mysql-0.9.4.tar.gz/download && \
     sha1sum -c --quiet guacamole-auth-mysql.tar.gz.sha1 && \
     tar xzf guacamole-auth-mysql.tar.gz && \
-    rm guacamole-auth-mysql.tar.gz* && \
-    mv guacamole-auth-mysql-${GUACAMOLE_VERSION}/schema/*.sql /schema
+    mv guacamole-auth-mysql-${GUACAMOLE_VERSION}/schema/*.sql /schema && \
+    rm -rf guacamole-auth-mysql*  
 
 # Setup database when container is started
 RUN \
