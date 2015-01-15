@@ -7,24 +7,22 @@ ENV GUACAMOLE_SERVER_SHA1 feafdb0714feac9494e3f53a5e3a590fe3d98513
 
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-RUN apt-get install -y curl
-RUN apt-get install -y gcc make
-RUN apt-get install -y libcairo2-dev libpng12-dev libossp-uuid-dev libvncserver-dev libfreerdp-dev libssl-dev
-RUN apt-get clean
+RUN apt-get update && \
+    apt-get install -y curl && \
+    apt-get install -y gcc make && \
+    apt-get install -y libcairo2-dev libpng12-dev libossp-uuid-dev libvncserver-dev libfreerdp-dev libssl-dev && \
+    apt-get clean
 
 
-RUN echo $GUACAMOLE_SERVER_SHA1  guacamole-server.tar.gz > guacamole-server.tar.gz.sha1
-RUN curl -L -o guacamole-server.tar.gz http://sourceforge.net/projects/guacamole/files/current/source/guacamole-server-${GUACAMOLE_VERSION}.tar.gz/download
-RUN sha1sum -c guacamole-server.tar.gz.sha1
-RUN tar xzf guacamole-server.tar.gz
-RUN rm guacamole-server.tar.gz
+RUN echo $GUACAMOLE_SERVER_SHA1  guacamole-server.tar.gz > guacamole-server.tar.gz.sha1 && \
+    curl -L -o guacamole-server.tar.gz http://sourceforge.net/projects/guacamole/files/current/source/guacamole-server-${GUACAMOLE_VERSION}.tar.gz/download && \
+    sha1sum -c --quiet guacamole-server.tar.gz.sha1 && \
+    tar xzf guacamole-server.tar.gz && \
+    rm guacamole-server.tar.gz*
 RUN cd guacamole-server-${GUACAMOLE_VERSION} && \
-    ./configure --help && \
-    ./configure
-RUN cd guacamole-server-${GUACAMOLE_VERSION} && make
-RUN cd guacamole-server-${GUACAMOLE_VERSION} && make install
-RUN ldconfig
+    ./configure && \
+    make install && \
+    ldconfig
 # TODO: remove build tools and libs after installation
 
 
