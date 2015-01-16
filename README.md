@@ -57,4 +57,5 @@ To only run the Guacamole web application:
 
     docker run -p 8080:8080 guacd mattgruter/guacamole-webserver
 
-The web application expects a running [guacd](https://github.com/mattgruter/dockerfile-guacamole/tree/master/guacd) Guacamole daemon on the address `guacd:4822` and a [Guacamole-ready MySQL database server](https://github.com/mattgruter/dockerfile-guacamole/tree/master/db) on `db:3306`. Start a guacd and database container first and then link to them as described above.
+The web application expects a running [guacd](https://github.com/mattgruter/dockerfile-guacamole/tree/master/guacd) Guacamole daemon at the address `guacd:4822` and a [Guacamole-ready MySQL database server](https://github.com/mattgruter/dockerfile-guacamole/tree/master/db) at `db:3306`.
+You'll probably want to start a guacd and database container first and then link to them as described above.
