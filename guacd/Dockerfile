@@ -29,7 +29,6 @@ RUN cd guacamole-server-${GUACAMOLE_VERSION} && \
 ENV GUACAMOLE_HOME /guacd
 RUN mkdir -p /guacd
 WORKDIR /guacd
-VOLUME /guacd
 EXPOSE 4822
 
 CMD ["guacd", "-f", "-b", "0.0.0.0", "-l", "4822"]
