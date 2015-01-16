@@ -1,0 +1,11 @@
+guacd:
+  image: mattgruter/guacamole-guacd
+db:
+  image: mattgruter/guacamole-db
+webserver:
+  image: mattgruter/guacamole-webserver
+  links:
+    - guacd
+    - db
+  ports:
+    - "8080:8080"
