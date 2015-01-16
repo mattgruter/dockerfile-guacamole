@@ -1,10 +1,11 @@
 # Docker images for Guacamole
 
-<img src="http://guac-dev.org/sites/all/themes/guac/images/guac-tricolor.png" align="right" height="150">
+<img src="logo.png" align="right">
 
-Run [Guacamole](http://guac-dev.org/), the HTML5 Clientless Remote Desktop inside Docker containers.
+Run [Guacamole](http://guac-dev.org/), the clientless remote desktop gateway inside Docker containers.
 
 Images on the Docker Hub:
+
 - Daemon: [mattgruter/guacamole-guacd](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
 - Database backend: [mattgruter/guacamole-db](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
 - Web application: [mattgruter/guacamole-webserver](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
