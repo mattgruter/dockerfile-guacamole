@@ -30,7 +30,7 @@ If you use [fig](http://www.fig.sh/) you can bulid and start all containers with
 
 Or if you don't want to build the images yourself and use the prebuild images from the Docker Hub:
 
-    fig -f fig.prod.yml
+    fig -f fig.prod.yml up
 
 And point your browser at [http://localhost:8080](http://localhost:8080).
 
