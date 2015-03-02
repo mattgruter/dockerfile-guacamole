@@ -7,7 +7,6 @@ ENV GUACAMOLE_WAR_SHA1        07d194593db296d20d87b858b02e7816fb4a9315
 ENV GUACAMOLE_AUTH_MYSQL_SHA1 a68166aec88784325f3358a16dedc70f2df73342
 ENV MYSQL_CONNECTOR_MD5       ad4c875c719247f8e8c41cd7f0609e00
 
-
 ### Guacamole webapp
 # Disable Tomcat's manager application.
 RUN rm -rf webapps/*
@@ -21,7 +20,6 @@ RUN echo $GUACAMOLE_WAR_SHA1  ROOT.war > webapps/ROOT.war.sha1 && \
 #   Example to set the JVM's max heap size to 256MB use the flag
 #   '-e RUNTIME_OPTS="-Xmx256m"' when starting a container.
 RUN echo 'export CATALINA_OPTS="$RUNTIME_OPTS"' > bin/setenv.sh
-
 
 ### Guacamole MySQL auth extension
 # Fetch and install Guacamole MySQL auth extension libs
@@ -41,7 +39,7 @@ RUN echo $MYSQL_CONNECTOR_MD5  mysql-connector.tar.gz > mysql-connector.tar.gz.m
     mv mysql-connector-java-*/mysql-connector-java-*.jar /guacamole/classpath && \
     rm -rf mysql-connector*
 
-
 ### Configuration
-COPY guacamole.properties guacamole/
+COPY guacamole.properties /guacamole/
 ENV GUACAMOLE_HOME /guacamole
+
