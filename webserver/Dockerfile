@@ -39,7 +39,11 @@ RUN echo $MYSQL_CONNECTOR_MD5  mysql-connector.tar.gz > mysql-connector.tar.gz.m
     mv mysql-connector-java-*/mysql-connector-java-*.jar /guacamole/classpath && \
     rm -rf mysql-connector*
 
-WORKDIR /guacamole
 ### Configuration
+WORKDIR /guacamole
 COPY guacamole.properties .
 ENV GUACAMOLE_HOME /guacamole
+
+
+### Standard work directory
+WORKDIR /usr/local/tomcat
