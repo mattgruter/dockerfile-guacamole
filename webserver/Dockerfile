@@ -40,10 +40,6 @@ RUN echo $MYSQL_CONNECTOR_MD5  mysql-connector.tar.gz > mysql-connector.tar.gz.m
     rm -rf mysql-connector*
 
 ### Configuration
-WORKDIR /guacamole
-COPY guacamole.properties .
+COPY guacamole.properties guacamole/
 ENV GUACAMOLE_HOME /guacamole
 
-
-### Standard work directory
-WORKDIR /usr/local/tomcat
