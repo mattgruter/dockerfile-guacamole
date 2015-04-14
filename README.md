@@ -8,7 +8,7 @@ Images on the Docker Hub:
 
 - Daemon: [mattgruter/guacamole-guacd](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
 - Database backend: [mattgruter/guacamole-db](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
-- Web application: [mattgruter/guacamole-webserver](https://registry.hub.docker.com/u/mattgruter/guacamole-guacd/)
+- Web application: [mattgruter/guacamole-webserver](https://registry.hub.docker.com/u/mattgruter/guacamole-webserver/)
 
 
 ## Getting started
