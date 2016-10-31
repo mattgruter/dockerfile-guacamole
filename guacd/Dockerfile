@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:xenial
 MAINTAINER Matthias Grüter <matthias@grueter.name>
 
 # To update, check http://guac-dev.org/releases
@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y gcc make && \
-    apt-get install -y libcairo2-dev libpng12-dev libossp-uuid-dev libvncserver-dev libfreerdp-dev libssl-dev && \
+    apt-get install -y libcairo2-dev libjpeg62-dev libpng12-dev libossp-uuid-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libssh-dev tomcat7 tomcat7-admin tomcat7-user && \
     apt-get clean
 
 
